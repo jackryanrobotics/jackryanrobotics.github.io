@@ -4,7 +4,14 @@
   link: /about
 - name: Contact
   link: /contact
+  link: /about
+- name: Contact
+  link: /contact
 - name: Blog
+  link: /blog
+- name: Quotes
+  link: /quotes
+
   link: /blog
 - name: Quotes
   link: /quotes
