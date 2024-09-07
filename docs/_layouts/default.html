@@ -4,9 +4,25 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap">
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+    <header class="site-header">
+      <h1>Jack Ryan Robotics</h1>
+    </header>
+    <div class="container">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          <li><a href="{{ "/about" | relative_url }}">About</a></li>
+          <li><a href="{{ "/contact" | relative_url }}">Contact</a></li>
+          <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+          <li><a href="{{ "/quotes" | relative_url }}">Quotes</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
   </body>
 </html>

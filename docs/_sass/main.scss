@@ -1,3 +1,179 @@
-.current {
-    color: rgb(31, 31, 31);
+/* Basic Reset */
+* {
+  margin: 8;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.site-header {
+  width: 40%; /* Full width of the viewport */
+  background-color: #ffffff;
+  color: #8d8a8a;
+  text-align: center;
+  padding: 15px;
+  font-family:'Noto Serif', serif;
+  position: fixed; /* Fixes the header at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures the header is on top of other content */
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2em; /* Adjust as needed */
+}
+/* Main Layout */
+body {
+  font-family: 'Noto Serif', serif; /* Use Aptos Serif if available, otherwise fallback to serif */
+  font-size: 14px; /* Set font size to 11px */
+  margin: 0; /* Remove default margin */
+  padding-top: 60px; /* Adds space for the fixed header */
+  width: 40%;
+  
+}
+
+/* Additional Styling for Content */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px; /* Add space below headings */
+}
+
+p {
+  margin-bottom: 15px; /* Add space below paragraphs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    width: 90%; /* Adjust width for smaller screens */
   }
+}
+/* Layout */
+.container {
+  display: flex;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+  width: 200px;
+  background-color: #f8f8f8;
+  padding: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px; /* Space between list items */
+  padding: 10px; /* Padding inside the box */
+  border: 1px solid #ccc; /* Light gray border around each item */
+  border-radius: 4px; /* Rounded corners for the box */
+  background-color: #fff; /* White background for the box */
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  display: block; /* Ensure the entire box is clickable */
+  height: 100%; /* Ensure link takes up full height of the li */
+  width: 100%; /* Ensure link takes up full width of the li */
+  line-height: 20px; /* Align text vertically */
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 15px;
+  margin-left: 68px; /* Ensure the content is not hidden under the sidebar */
+  height: calc(100vh - 60px);
+  overflow-y: auto; /* Adds a scrollbar when the content is too long */
+}
+/* Current Link Styling */
+.current {
+  color: rgb(31, 31, 31);
+}
+
+/* styles.css */
+.blog-link {
+  text-decoration: none;
+  color: blue;
+}
+
+.blog-link.read {
+  color: grey;
+  text-decoration: line-through;
+}
+
+
+
+/* Style for the List */
+.quote-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+}
+
+.quote-list li {
+  margin-bottom: 10px; /* Space between list items */
+  padding-left: 20px; /* Indent the text */
+  position: relative; /* For positioning the custom bullet */
+}
+
+.quote-list li::before {
+  content: '-'; /* Custom bullet as a hyphen */
+  position: absolute;
+  left: 0; /* Position at the start of the list item */
+  color: #333; /* Color of the hyphen */
+  font-size: 1.2em; /* Adjust size if needed */
+  line-height: 1; /* Align with text */
+}
+
+.quote-list p {
+  margin: 0; /* Remove margin from paragraphs */
+  padding: 5px 0; /* Add some space inside paragraphs */
+  font-style: italic; /* Apply italics to the quotes */
+  color: #555; /* Optional: Change the color for emphasis */
+}
+
+
+
+/* Latest Posts Section */
+.latest-posts {
+  list-style-type: none; /* Remove default list bullets */
+  padding-left: 0; /* Remove default padding */
+}
+
+.latest-posts li {
+  margin-bottom: 20px; /* Space between posts */
+  border-bottom: 1px solid #ddd; /* Optional: Border between posts */
+  padding-bottom: 10px; /* Padding at the bottom of each post */
+}
+
+.latest-posts a {
+  text-decoration: none; /* Remove underline from links */
+  color: #007bff; /* Link color */
+  font-weight: bold; /* Bold text for post titles */
+}
+
+.latest-posts a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.latest-posts p {
+  color: #666; /* Color for post excerpts */
+}
+
+
+/* Image on Homepage */
+.page-image {
+  max-width: 100%; /* Make sure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any default inline spacing */
+  margin: 20px 0; /* Add margin around the image */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
