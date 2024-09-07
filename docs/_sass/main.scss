@@ -1,19 +1,19 @@
 /* Basic Reset */
 * {
-  margin: 8;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* Header Styling */
 .site-header {
-  width: 40%; /* Full width of the viewport */
-  background-color: #ffffff;
+  max-width: 800px; /* Full width of the viewport */
+  background-color: #d0d0d0;
   color: #8d8a8a;
   text-align: center;
-  padding: 15px;
+  
   font-family:'Noto Serif', serif;
-  position: fixed; /* Fixes the header at the top */
+  position: static; /* Fixes the header at the top */
   top: 0;
   left: 0;
   z-index: 1000; /* Ensures the header is on top of other content */
@@ -21,17 +21,36 @@
 
 .site-header h1 {
   margin: 0;
-  font-size: 2em; /* Adjust as needed */
+  font-size: 3em; /* Adjust as needed */
 }
+
+/* Custom styles for titles */
+.custom-title {
+  font-family: 'Your Custom Font', sans-serif; /* Replace with your preferred font */
+  font-size: 2em; /* Adjust the size as needed */
+  color: #412424; /* Optional: Change text color */
+  text-align: left; /* Optional: Center-align the title */
+}
+
+.post-separator {
+  border: none;
+  border-top: 1px solid #874824; /* Line at the end of each blog post */
+  margin: 20px 0; /* Space above and below the line */
+  margin-bottom: 30px; /* Space below each blog post */
+  padding-bottom: 60px;
+}
+
 /* Main Layout */
 body {
-  font-family: 'Noto Serif', serif; /* Use Aptos Serif if available, otherwise fallback to serif */
+  
+  font-family: verdana, serif; /* Use Aptos Serif if available, otherwise fallback to serif */
   font-size: 14px; /* Set font size to 11px */
   margin: 0; /* Remove default margin */
-  padding-top: 60px; /* Adds space for the fixed header */
-  width: 40%;
-  
+  max-width: 800px;
+  text-align: justify;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
+
 
 /* Additional Styling for Content */
 h1, h2, h3, h4, h5, h6 {
@@ -42,40 +61,41 @@ p {
   margin-bottom: 15px; /* Add space below paragraphs */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .main-container {
-    width: 90%; /* Adjust width for smaller screens */
-  }
-}
 /* Layout */
 .container {
   display: flex;
+  flex-direction: row; /* Align sidebar and content in a row */
+  
 }
 
 
 /* Sidebar Styling */
 .sidebar {
-  width: 200px;
+  width: 100px;
   background-color: #f8f8f8;
   padding: 15px;
+  box-sizing: border-box; /* Include padding in width */
+  height: 300px;
 }
 
 .sidebar ul {
   list-style: none;
+  padding: 0; /* Remove default padding */
 }
 
 .sidebar li {
-  margin-bottom: 10px; /* Space between list items */
-  padding: 10px; /* Padding inside the box */
-  border: 1px solid #ccc; /* Light gray border around each item */
+  margin-bottom: 3px; /* Space between list items */
+  padding: 3px; /* Padding inside the box */
+  border: 1px solid #af6666; /* Light gray border around each item */
   border-radius: 4px; /* Rounded corners for the box */
-  background-color: #fff; /* White background for the box */
+  background-color: #f5e3bd; /* White background for the box */
 }
 
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
+  text-align: center;
+  font-family: 'Noto Serif', serif;
   display: block; /* Ensure the entire box is clickable */
   height: 100%; /* Ensure link takes up full height of the li */
   width: 100%; /* Ensure link takes up full width of the li */
@@ -89,10 +109,10 @@ p {
 /* Main Content */
 .content {
   flex: 1;
-  padding: 15px;
+  /*padding: 15px;*/
   margin-left: 68px; /* Ensure the content is not hidden under the sidebar */
   height: calc(100vh - 60px);
-  overflow-y: auto; /* Adds a scrollbar when the content is too long */
+ 
 }
 /* Current Link Styling */
 .current {
@@ -109,8 +129,6 @@ p {
   color: grey;
   text-decoration: line-through;
 }
-
-
 
 /* Style for the List */
 .quote-list {
@@ -176,4 +194,78 @@ p {
   display: block; /* Remove any default inline spacing */
   margin: 20px 0; /* Add margin around the image */
   border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+
+
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  p a, p a:visited { color: #444 !important; text-decoration: underline; }
+  p a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+  .hide-on-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+
+
+
+/* Basic styling for the contact form 
+.contact-form {
+  background: #fff;
+  padding: 10%;
+  border-radius: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+*/
+.contact-form h2 {
+  margin-top: 0;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bfbfbf;
+  border-radius: 1px;
+  box-sizing: border-box;
+}
+
+.contact-form .form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.contact-form .form-group button {
+  background-color: #13ddab;
+  color: #440000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form .form-group button:hover {
+  background-color: #40b991;
 }
